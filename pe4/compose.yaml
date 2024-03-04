@@ -1,0 +1,10 @@
+version: '3'
+services:
+  challenge:
+    build:
+      args:
+        SSH_PASS: ${SSH_PASS}
+        FLAG: ${FLAG}
+    stop_signal: SIGINT
+    ports:
+      - 127.0.0.1:${SSH_PORT:-22}:22
